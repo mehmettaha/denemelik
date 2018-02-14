@@ -1,0 +1,54 @@
+def reversing(a):
+  "Yazilari tersine cevirip yazar"
+  b=a.split()
+  c=[]
+  for i in range(len(b)):
+    c.append(b[-i-1])
+  print(" ".join(c))
+  
+def password_generator() :
+  """Generates a random password from the lists given below"""
+  
+  a=["a","b","c","d","e","f","g","h","i","j","k","l","m","n"]
+  b=["1","2","3","4","5","6","7","8","9","0"]
+  c=["*","&","+","%","@"]
+  
+  password=random2.sample(a,random2.randint(4,6))+random2.sample(b,2)+random2.sample(c,3)
+  random2.shuffle(password)
+  return  "".join(password)
+  
+def cows_and_bulls():
+  """ Plays the cows and bulls game, where you try to guess the random number. Cow means right number on right digit, bull means right number on wrong digit."""
+  
+
+  a,b,c,d=str(random2.randint(1,9)),str(random2.randint(0,9)),str(random2.randint(0,9)),str(random2.randint(0,9))
+  
+  x=[a,b,c,d]
+  co=0  
+  while True:
+  
+    while True:
+      i=input("Guess a 4 digit number:")
+      if len(i)==4:
+        co+=1
+        break
+      print("Wrong input")
+    
+    z=list(i)
+    
+    c1,c2=0,0
+    
+    for var in range(0,4) :
+      if z[var]==x[var]:
+        c1+=1
+      elif z[var]!=x[var] and z[var] in x:
+        c2+=1
+  
+    print(c1,"cows",c2,"bulls")
+      
+    if c1==4:
+      print("Took you",co,"tries to find")
+      break
+      
+  
+ 
